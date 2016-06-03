@@ -1,0 +1,227 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+  background-color: #621a4b;
+  border-color: #621a4b;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+
+.portfolio-header{
+    text-align: center;
+    font-size: 50px;
+    background-color: #621A4B;
+    color: #fff;
+}
+
+.cash-balance-container {
+    height: 430px;
+    border: 1px solid #621A4B;
+    border-radius: 5px;
+    margin: 0px;
+    margin: 20px;
+}
+
+.pie-chart-container{
+    margin: 20px;
+
+}
+
+.cash-label {
+    text-align: center;
+    font-size: 30px;
+    display: block;
+    margin-top: 110px;
+    color: #621A4B;
+}
+
+.cash-balance {
+    font-size: 80px;
+    color: #3ea841;
+    text-align: center;
+}
+
+.no-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.table-container {
+  margin-top: 15px;
+}
+
+#shareTable th {
+    color: #621A4B;
+    font-size: 20px;
+    background: linear-gradient(#f4f3f0,#e7e4dd) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    /* height: 10px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+#shareTable td{
+    padding-left: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.btn-primary{
+  min-width: 7em;  
+  background-color: #621A4B;
+  margin-right: 20px;
+  border-color: #621A4B;
+}
+
+.btn-primary:hover,.btn-primary:active, .btn-primary:focus {
+  background-color: #4e103b;
+  transition: 0.15s ease-in background-color, 0.15s ease-in border-color;
+}
+
+.green {
+  color: #66cc00;
+}
+
+.red {
+  color: #e50000;
+}
+
+.modal-close-cross {
+    background: transparent;
+    color: #BBB;
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-align: right;
+    width: 30px;
+    padding: 0;
+}
+
+.modal-close-cross {
+  border: none;
+  top: 25px;
+}
+
+.modal-title {
+  color: #621A4B;
+  font-size: 35px;
+}
+
+.modal-items {
+  margin-top: 10px;
+}
+
+.modal-label {
+    color: #621A4B;
+    margin-bottom: 10px; 
+    font-weight: 900;
+    font-size: 15px;    
+}
+
+.link {
+  cursor: pointer;
+}
+
+.modal-error {
+  font-size: 20px;  
+}
+
+.cash-btn {
+  margin-left: 20px;
+  margin-top: 80px;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+#accountTable th {
+    color: #621A4B;
+    font-size: 17px;
+    background: linear-gradient(#f4f3f0,#e7e4dd) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    /* height: 10px; */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+#accountTable td{
+    padding-left: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 17px;
+}
+
+.modal-add {
+    height: 35px;
+    width: 35px;
+    background-color: #621A4B;
+    color: #fff;
+    text-align: center;
+    padding-top: 8px;
+    border-radius: 17px;
+    cursor: pointer;
+}
+
+.net-asset {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 215px;
+}

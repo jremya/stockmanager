@@ -1,0 +1,82 @@
+<div>
+	<form name="sellForm">
+		<button class="modal-close-cross" ng-click="cancel()"> <span class="glyphicon glyphicon-remove"></span></button>
+
+		<div class="modal-header">
+			<h3 class="modal-title">Sell</h3>
+		</div>
+
+		<div class="modal-body ">
+			<div class="modal-form-row ">
+				<label class="modal-label">Select the share holding</label>
+				<select class="form-control input-lg"
+				 		ng-model="selectedShareHolding"
+						ng-options="share as share.name for share in sharesList ">
+						<option selected value="">Select a share holding</option>
+				</select>			
+			</div>
+
+			<div class="modal-form-row" ng-if="selectedShareHolding">
+				<div class="modal-items"> 
+					<label class="modal-label">Name</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.name" disabled="true">					
+				</div>
+
+				<div class="modal-items"> 
+					<label class="modal-label">Symbol</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.symbol" disabled="true">					
+				</div>
+
+				<div class="modal-items"> 
+					<label class="modal-label">Price</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.price | currency" disabled="true">					
+				</div>
+				
+				<div class="modal-items pull-left"> 
+					<label class="modal-label">Change</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.change" disabled="true">					
+				</div>
+				
+				<div class="modal-items pull-right"> 
+					<label class="modal-label">Change Percentage</label>
+					<input class="form-control input-lg" ng-class="selectedShareHolding.changePerc.indexOf('-') === -1 ? 'green' : 'red'" type="text" ng-value="selectedShareHolding.changePerc" disabled="true">					
+				</div>
+				
+				<div class="modal-items pull-left"> 
+					<label class="modal-label">Day High</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.dayHigh | currency" disabled="true">					
+				</div>				
+
+				<div class="modal-items pull-right"> 
+					<label class="modal-label">Day Low</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.dayLow | currency" disabled="true">					
+				</div>
+				
+				<div class="modal-items pull-left"> 
+					<label class="modal-label">Year High</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.yearHigh | currency" disabled="true">					
+				</div>
+
+				<div class="modal-items pull-right"> 
+					<label class="modal-label">Year Low</label>
+					<input class="form-control input-lg" type="text" ng-value="selectedShareHolding.yearLow | currency" disabled="true">					
+				</div>
+
+				<div class="modal-items"> 
+					<label class="modal-label">Current Quantity</label>
+					<input class="form-control input-lg" type="number" ng-value="selectedShareHolding.quantity" disabled="true">					
+				</div>
+
+				<div class="modal-items"> 
+					<label class="modal-label">Selling Quantity</label>
+					<input class="form-control input-lg" type="number" ng-model="selectedShareHolding.sellQuantity" required max="{{selectedShareHolding.quantity}}" >
+				</div>		
+			</div>            
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn btn-primary btn-lg"  ng-click="sellShare()" ng-disabled="sellForm.$invalid">Sell</button>
+			<button class="btn btn-primary btn-lg" ng-click="cancel()">Cancel</button>
+		</div>
+	</form>
+</div>

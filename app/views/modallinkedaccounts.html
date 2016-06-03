@@ -1,0 +1,49 @@
+<div>
+	<form name="acctForm">
+		<button class="modal-close-cross" ng-click="cancel()"> <span class="glyphicon glyphicon-remove"></span></button>
+
+		<div class="modal-header">
+			<h3 class="modal-title">Linked Accounts</h3>
+		</div>
+
+		<div class="modal-body ">
+			<div class="modal-form-row ">
+				<div class="modal-items">
+					<table class="" id="accountTable">
+						<thead>
+							<th class="col-md-4">Account Name</th>
+							<th class="col-md-4">BSB</th>
+							<th class="col-md-4">Account Number</th>
+							<th></th>
+						</thead>
+						<tbody ng-repeat="account in accounts">
+							<tr>
+								<td class="col-md-4">
+									<input type="text" class="form-control input-lg" ng-model="account.accountName"  required>
+								</td>
+								<td class="col-md-4">
+									<input type="text" class="form-control input-lg" ng-model="account.bsb"  ng-minlength="6" ng-maxlength="6" required integers>
+								</td>
+								<td class="col-md-4">
+									<input type="text" class="form-control input-lg" ng-model="account.acctNo"  ng-minlength="7" ng-maxlength="13" required integers>
+								</td>
+								<td><span class="glyphicon glyphicon-remove red" ng-click="removeAccount(account)"></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-items pull-right modal-add" ng-click="addAccount()">				
+					<span class="glyphicon glyphicon-plus"></span>			
+				</div>
+				<div class="modal-items ">
+					<label class="modal-label"></label>	
+				</div>
+			</div>            
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn btn-primary btn-lg"  ng-click="ok()" ng-disabled="acctForm.$invalid || accounts.length === 0">Ok</button>
+			<button class="btn btn-primary btn-lg" ng-click="cancel()">Cancel</button>
+		</div>
+	</form>
+</div>

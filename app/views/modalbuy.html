@@ -1,0 +1,83 @@
+<div>
+	<form name="buyForm">
+		<button class="modal-close-cross" ng-click="cancel()"> <span class="glyphicon glyphicon-remove"></span></button>
+
+		<div class="modal-header">
+			<h3 class="modal-title">Buy</h3>
+		</div>
+
+		<div class="modal-body ">
+			<div class="modal-form-row ">
+				<label class="modal-label">Search for symbol</label>
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Enter Ticker/symbol" ng-model="searchStr" ng-enter="searchTickerDetails()">
+					<span class="input-group-addon link" ng-click="searchTickerDetails()" ><i class="glyphicon glyphicon-search"></i></span>
+				</div>
+			</div>
+
+			<div class="modal-form-row" ng-if="shareBought">
+				<div class="modal-items"> 
+					<label class="modal-label">Name</label>
+					<input class="form-control input-lg" type="text" ng-value="shareBought.name" disabled="true">					
+				</div>
+
+				<div class="modal-items"> 
+					<label class="modal-label">Symbol</label>
+					<input class="form-control input-lg" type="text" ng-value="shareBought.symbol" disabled="true">					
+				</div>
+
+				<div class="modal-items"> 
+					<label class="modal-label">Price</label>
+					<input class="form-control input-lg" type="text" ng-value="shareBought.price | currency" disabled="true">					
+				</div>
+
+				<div>
+					<div class="modal-items pull-left"> 
+						<label class="modal-label">Change</label>
+						<input class="form-control input-lg" type="text" ng-value="shareBought.change" disabled="true">					
+					</div>
+				
+					<div class="modal-items pull-right"> 
+						<label class="modal-label">Change Percentage</label>
+						<input class="form-control input-lg" ng-class="shareBought.changePerc.indexOf('-') === -1 ? 'green' : 'red'" type="text" ng-value="shareBought.changePerc" disabled="true">					
+					</div>
+				</div>
+
+				<div>
+					<div class="modal-items pull-left"> 
+						<label class="modal-label">Day High</label>
+						<input class="form-control input-lg" type="text" ng-value="shareBought.dayHigh | currency" disabled="true">					
+					</div>				
+
+					<div class="modal-items pull-right"> 
+						<label class="modal-label">Day Low</label>
+						<input class="form-control input-lg" type="text" ng-value="shareBought.dayLow | currency" disabled="true">					
+					</div>
+				</div>
+
+				<div>
+					<div class="modal-items pull-left"> 
+						<label class="modal-label">Year High</label>
+						<input class="form-control input-lg" type="text" ng-value="shareBought.yearHigh | currency" disabled="true">					
+					</div>
+
+					<div class="modal-items pull-right"> 
+						<label class="modal-label">Year Low</label>
+						<input class="form-control input-lg" type="text" ng-value="shareBought.yearLow | currency" disabled="true">					
+					</div>
+				</div>
+
+				<div class="modal-items"> 
+					<label class="modal-label">Quantity</label>
+					<input class="form-control input-lg" type="number" ng-model="shareBought.quantity" required min="1">					
+				</div>
+			</div>
+			<div class="modal-form-row modal-items modal-error red" ng-if="errorMessage">{{errorMessage}}</div>            
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn btn-primary btn-lg"  ng-click="buyShare()" ng-disabled="buyForm.$invalid">Buy</button>
+			<button class="btn btn-primary btn-lg" ng-click="cancel()">Cancel</button>
+		</div>
+	</form>
+</div>

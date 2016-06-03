@@ -1,0 +1,47 @@
+<div>
+	<form name="fundsForm" novalidate>
+		<button class="modal-close-cross" ng-click="cancel()"> <span class="glyphicon glyphicon-remove"></span></button>
+
+		<div class="modal-header">
+			<h3 class="modal-title">Transfer funds</h3>
+		</div>
+
+		<div class="modal-body ">
+			<div class="modal-form-row ">
+				<div class="modal-items">
+					<label class="modal-label">Select transaction</label><br>
+					<label> <input type="radio" ng-model="transaction.credit" ng-value="true" ng-change="reset()" required> Credit Funds </label>
+            		<label> <input type="radio" ng-model="transaction.credit" ng-value="false" ng-change="reset()" required> Debit Funds </label>
+				</div>
+			</div>
+			<div class="modal-form-row" ng-hide="transaction.credit == null">
+				<div class="modal-items">
+					<label class="modal-label">Select Account</label>
+					<select class="form-control input-lg"
+							ng-model="selectedAccount"
+							ng-options="account as combined(account) for account in accounts ">
+							<option selected value="">Select account</option>
+					</select>
+				</div>
+				<div class="modal-items">
+					<label class="modal-label">Available Account Balance</label>
+					<input class="form-control input-lg" ng-model="selectedAccount.balance" type="text" disabled="true">
+				</div>
+				<div class="modal-items">
+					<label class="modal-label">Available Asset Balance</label>
+					<input class="form-control input-lg" ng-model="availableBalance" type="text" disabled="true">
+				</div>
+				<div class="modal-items">
+					<label class="modal-label">Amount to transfer</label>
+					<input class="form-control input-lg" ng-model="transaction.amount" type="number" required >
+				</div>
+			</div>
+			<div class="modal-form-row modal-items modal-error red" ng-if="errorMessage">{{errorMessage}}</div>
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn btn-primary btn-lg"  ng-click="ok()" ng-disabled="fundsForm.$invalid">Ok</button>
+			<button class="btn btn-primary btn-lg" ng-click="cancel()">Cancel</button>
+		</div>
+	</form>
+</div>

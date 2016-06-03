@@ -1,0 +1,43 @@
+<div class="main-container">
+	<div class="col-md-12 portfolio-header">Smart Manager Portfolio</div>
+	<div class="col-md-5 cash-balance-container pull-left">
+		<label class="cash-label">Total available balance</label>
+		<div class="cash-balance">{{availableBalance | currency}}</div>
+		<div class="pull-left">
+			<button class="btn btn-lg btn-primary cash-btn" ng-click="showLinkedAccounts()">Linked Accounts</button>
+		</div>
+		<div class="pull-right">
+			<button class="btn btn-lg btn-primary cash-btn" ng-click="transferFunds()">Transfer funds</button>
+		</div>
+	</div>
+	<div class="col-md-5 pie-chart-container pull-right">
+		<canvas tc-chartjs-doughnut chart-options="options" chart-data="data" chart-legend="legend"></canvas>
+		<div tc-chartjs-legend chart-legend="legend" class="net-asset"></div>
+	</div>
+	<div class="table-container col-md-12">
+		<table id="shareTable">
+			<thead>
+				<th class="col-md-4 no-padding">Name</th>
+				<th class="col-md-2 no-padding">TICKR</th>
+				<th class="col-md-2 no-padding">Price</th>
+				<th class="col-md-2 no-padding">Change</th>
+				<th class="col-md-2 no-padding">Quantity</th>
+				<th class="col-md-3 no-padding">Value</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="share in myShares">
+					<td>{{share.name}}</td>
+					<td>{{share.symbol}}</td>
+					<td>{{share.price | currency}}</td>
+					<td ng-class="share.changePerc.indexOf('-') === -1 ? 'green' : 'red'">{{share.changePerc}}</td>
+					<td>{{share.quantity}}</td>
+					<td>{{share.price * share.quantity | currency}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="button-group pull-right">
+		<button type="button" class="btn btn-lg btn-primary" ng-click="openBuyModal()">Buy</button>
+		<button type="button" class="btn btn-lg btn-primary " ng-click="openSellModal()">Sell</button> 
+	</div>
+</div>

@@ -1,0 +1,12 @@
+[
+    {
+        "accountName": "Account1",
+        "bsb": "111222",
+        "acctNo": "0001234567891"
+    },
+    {
+        "accountName": "Account2",
+        "bsb": "999333",
+        "acctNo": "123456789"
+    }
+]
